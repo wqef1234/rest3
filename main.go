@@ -327,7 +327,7 @@ var CreateJournalHandler = http.HandlerFunc(
 			lid, err := res.LastInsertId()
 
 			newPage,_ := os.Create("content/journals/"+fmt.Sprintf("%d.html",lid))
-			data,_ := ioutil.ReadFile("content/detailbook.html")
+			data,_ := ioutil.ReadFile("content/detailjournal.html")
 			data = bytes.Replace(data,[]byte("DETAIL"),[]byte(detail),1)
 			newPage.Write(data)
 
